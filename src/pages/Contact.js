@@ -17,13 +17,15 @@ const Contact = () => {
                     <p>Hi there, contact me to ask me about anything you have in mind.</p>
                 </div>
                 <form onSubmit={handleSubmit} action="submit">
-                    <div className="field">
-                        <label htmlFor="first_name">First name</label>
-                        <input id='first_name' type="text" placeholder='Enter your first name.' />
-                    </div>
-                    <div className="field">
-                        <label htmlFor="last_name">Last name</label>
-                        <input id='last_name' type="text" placeholder='Enter your Last name.'/>
+                    <div className="name">
+                        <div className="field">
+                            <label htmlFor="first_name">First name</label>
+                            <input id='first_name' type="text" placeholder='Enter your first name.' />
+                        </div>
+                        <div className="field l-name">
+                            <label htmlFor="last_name">Last name</label>
+                            <input id='last_name' type="text" placeholder='Enter your Last name.'/>
+                        </div>
                     </div>
                     <div className="field">
                         <label htmlFor="">Email</label>
@@ -33,7 +35,11 @@ const Contact = () => {
                         <label htmlFor="message">Message</label>
                         <textarea placeholder="Send me a message and i'll reply as soon as possible..." name="message" id="message" cols="30" rows="10"></textarea>
                     </div>
-                    <button type='submit' id='btn__submit'>Send Message</button>
+                    <div className="field radio">
+                        <input type="radio" />
+                        <label htmlFor="radio">You agree to providing your data to who may contact you.</label>
+                    </div>
+                    <button formTarget='_blank' type='submit' id='btn__submit'>Send Message</button>
                 </form>
                 <Footer />
             </div>
