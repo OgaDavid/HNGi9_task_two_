@@ -138,6 +138,38 @@ main {
 
 /* Footer styling ends here */
 
+/* Contact page styling starts here */
+
+.contact-section {
+  text-align: start;
+  margin-top: 90px;
+}
+
+.contact-heading h1 {
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  margin-bottom: 20px;
+}
+
+.contact-heading p {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #475467;
+  margin-bottom: 30px;
+}
+
+form {
+  margin-bottom: 6rem;
+}
+
+form label{
+  display: block;
+}
+
+
+
 
 /* media queries */
 
