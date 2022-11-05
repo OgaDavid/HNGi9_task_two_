@@ -1,13 +1,16 @@
 import React from 'react';
-import FormData from '../Data/FormData';
-import Form from '../utils/Form';
+import { useState } from 'react';
 import Footer from '../components/Footer'
 
 const Contact = () => {
 
-    function handleSubmit(event) {
-        event.preventdefault();
-    }
+    const [fName, setFName] = useState();
+    const [lName, setLName] = useState();
+    const [email, setEmail] = useState();
+    const [message, setMessage] = useState();
+    const [valid, setValid] = useState(true);
+
+    const name = 'David';
 
     return ( 
         <>
@@ -16,30 +19,32 @@ const Contact = () => {
                     <h1>Contact Me</h1>
                     <p>Hi there, contact me to ask me about anything you have in mind.</p>
                 </div>
-                <form onSubmit={handleSubmit} action="submit">
+                <form>
                     <div className="name">
                         <div className="field">
                             <label htmlFor="first_name">First name</label>
-                            <input id='first_name' type="text" placeholder='Enter your first name.' />
+                            <input value={fName} required onChange={(e) => setFName(e.target.value)} id='first_name' type="text" placeholder='Enter your first name.' />
+                            <span>Invalid First name.</span>
                         </div>
                         <div className="field l-name">
                             <label htmlFor="last_name">Last name</label>
-                            <input id='last_name' type="text" placeholder='Enter your Last name.'/>
+                            <input value={lName} required onChange={(e) => setLName(e.target.value)} id='last_name' type="text" placeholder='Enter your Last name.'/>
+                            <span>Invalid Last name.</span>
                         </div>
                     </div>
                     <div className="field">
                         <label htmlFor="">Email</label>
-                        <input id='email' type="text" placeholder='Enter a valid Email.'/>
+                        <input value={email} required onChange={(e) => setEmail(e.target.value)} id='email' type="email" placeholder='Enter a valid Email.'/>
                     </div>
-                    <div className="field">
+                    <div className="field message">
                         <label htmlFor="message">Message</label>
-                        <textarea placeholder="Send me a message and i'll reply as soon as possible..." name="message" id="message" cols="30" rows="10"></textarea>
+                        <textarea value={message} required onChange={(e) => setMessage(e.target.value)} placeholder="Send me a message and i'll reply as soon as possible..." name="message" id="message"></textarea>
                     </div>
                     <div className="field radio">
-                        <input type="radio" />
-                        <label htmlFor="radio">You agree to providing your data to who may contact you.</label>
+                        <input required type="radio" />
+                        <label htmlFor="checkbox">You agree to providing your data to {name} who may contact you.</label>
                     </div>
-                    <button formTarget='_blank' type='submit' id='btn__submit'>Send Message</button>
+                    <button className='form-btn' id='btn__submit'>Send Message</button>
                 </form>
                 <Footer />
             </div>
@@ -48,6 +53,3 @@ const Contact = () => {
 }
  
 export default Contact;
-<>
-    <h1>Contacts</h1>
-</>
