@@ -9,24 +9,11 @@ const Contact = () => {
     const [lName, setLName] = useState();
     const [email, setEmail] = useState();
     const [message, setMessage] = useState();
-    const [valid, setValid] = useState(true);
-    const [focused, setFocused] = useState(false);
 
 
     const handleSubmit = (e) => {
-
         e.preventDefault();
-        // if (
-        //   fName?.trim().length < 3 ||
-        //   lName?.trim().length < 3 ||
-        //   message?.trim().length < 0
-        // ) {
-        //   e.preventDefault();
-        //   setValid(false);
-        // } else {
-        //   e.preventDefault();
-        //   setValid(true);
-        // }
+        alert('You have successfully messaged' + {name} + ". He'll get back to you shortly.")
       };
 
     return ( 
@@ -40,8 +27,8 @@ const Contact = () => {
                     <div className="name">
                         <div className="field">
                             <label htmlFor="first_name">First name</label>
-                            <input onBlur={() =>{setFocused(true)}} focused='false'  value={fName} required onChange={(e) => setFName(e.target.value)} id='first_name' type="text" placeholder='Enter your first name.' />
-                            <span>Invalid First name.</span>
+                            <input focused='false'  value={fName} required onChange={(e) => setFName(e.target.value)} id='first_name' type="text" placeholder='Enter your first name.' />
+                             <span>Invalid First name.</span>
                         </div>
                         <div className="field l-name">
                             <label htmlFor="last_name">Last name</label>
@@ -52,10 +39,12 @@ const Contact = () => {
                     <div className="field">
                         <label htmlFor="">Email</label>
                         <input value={email} required onChange={(e) => setEmail(e.target.value)} id='email' type="email" placeholder='Enter a valid Email.'/>
+                        <span>Enter a valid Email.</span>
                     </div>
                     <div className="field message">
                         <label htmlFor="message">Message</label>
                         <textarea value={message} required onChange={(e) => setMessage(e.target.value)} placeholder="Send me a message and i'll reply as soon as possible..." name="message" id="message"></textarea>
+                        <span>Text field cannot be empty.</span>
                     </div>
                     <div className="field radio">
                         <input required type="radio" />

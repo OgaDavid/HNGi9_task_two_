@@ -202,9 +202,9 @@ input {
   padding-left: 10px;
 }
 
-input:invalid ~ span {
+/* input:invalid ~ span {
   display: block;
-}
+} */
 
 button:hover {
   cursor: pointer;
@@ -220,7 +220,7 @@ button:hover {
 
 input:focus, textarea:focus {
   outline: none;
-  border: 1px solid lightblue;
+  border: 1px solid #1570EF;
 }
 
 textarea {
