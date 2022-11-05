@@ -13,7 +13,7 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        alert('You have successfully messaged' + {name} + ". He'll get back to you shortly.")
+        alert("You have successfully messaged David. He'll get back to you shortly")
       };
 
     return ( 
