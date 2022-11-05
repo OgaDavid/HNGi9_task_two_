@@ -3,14 +3,31 @@ import { useState } from 'react';
 import Footer from '../components/Footer'
 
 const Contact = () => {
-
+    
+    const name = 'David';
     const [fName, setFName] = useState();
     const [lName, setLName] = useState();
     const [email, setEmail] = useState();
     const [message, setMessage] = useState();
     const [valid, setValid] = useState(true);
+    const [focused, setFocused] = useState(false);
 
-    const name = 'David';
+
+    const handleSubmit = (e) => {
+
+        e.preventDefault();
+        // if (
+        //   fName?.trim().length < 3 ||
+        //   lName?.trim().length < 3 ||
+        //   message?.trim().length < 0
+        // ) {
+        //   e.preventDefault();
+        //   setValid(false);
+        // } else {
+        //   e.preventDefault();
+        //   setValid(true);
+        // }
+      };
 
     return ( 
         <>
@@ -19,11 +36,11 @@ const Contact = () => {
                     <h1>Contact Me</h1>
                     <p>Hi there, contact me to ask me about anything you have in mind.</p>
                 </div>
-                <form>
+                <form action=''>
                     <div className="name">
                         <div className="field">
                             <label htmlFor="first_name">First name</label>
-                            <input value={fName} required onChange={(e) => setFName(e.target.value)} id='first_name' type="text" placeholder='Enter your first name.' />
+                            <input onBlur={() =>{setFocused(true)}} focused='false'  value={fName} required onChange={(e) => setFName(e.target.value)} id='first_name' type="text" placeholder='Enter your first name.' />
                             <span>Invalid First name.</span>
                         </div>
                         <div className="field l-name">
@@ -44,7 +61,7 @@ const Contact = () => {
                         <input required type="radio" />
                         <label htmlFor="checkbox">You agree to providing your data to {name} who may contact you.</label>
                     </div>
-                    <button className='form-btn' id='btn__submit'>Send Message</button>
+                    <button onSubmit={handleSubmit} className='form-btn' id='btn__submit'>Send Message</button>
                 </form>
                 <Footer />
             </div>
