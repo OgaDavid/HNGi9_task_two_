@@ -193,13 +193,17 @@ input {
 }
 
 .radio {
-  display: flex;
   align-items: center;
   margin-bottom: 32px;
 }
 
+.radio input {
+  display: flex;
+}
+
 .radio label {
   padding-left: 10px;
+  width: 100%;
 }
 
 /* input:invalid ~ span {
@@ -208,6 +212,10 @@ input {
 
 button:hover {
   cursor: pointer;
+}
+
+textarea {
+  padding: 1rem;
 }
 
 .field span {
@@ -234,8 +242,6 @@ textarea {
 }
 
 textarea::placeholder {
-  padding-left: 14px;
-  padding-top: 12px;
   font-family: inter;
   font-weight: 400;
 }
@@ -284,6 +290,35 @@ textarea::placeholder {
       gap: 2rem;
   }
 
+  textarea {
+    width: 300px;
+  }
+
+  .contact-section {
+    width: 450px;
+    margin-left: 4rem;
+  }
+
+  form button {
+    width: 380px;
+  }
+
+  .contact-heading p {
+    font-size: 12px;
+  }
+
+  .name {
+    display: block;
+  }
+
+  .name input {
+    width: 300px;
+  }
+
+  .field input {
+    width: 300px;
+  }
+
   .footer-content::before {
       bottom: 230px;
   }
@@ -292,6 +327,18 @@ textarea::placeholder {
       margin-bottom: 70px;
   }
 } 
+
+@media(max-width: 390px) {
+  .contact-section {
+    margin-left: 5rem;
+  }
+}
+
+@media(max-width: 360px) {
+  .contact-section {
+    margin-left: 7rem;
+  }
+}
 
 @media(max-width: 320px) {
   .links a {

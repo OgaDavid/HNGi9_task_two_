@@ -25,12 +25,12 @@ const Contact = () => {
                 </div>
                 <form action=''>
                     <div className="name">
-                        <div className="field">
+                        <div className="field name">
                             <label htmlFor="first_name">First name</label>
                             <input focused='false'  value={fName} required onChange={(e) => setFName(e.target.value)} id='first_name' type="text" placeholder='Enter your first name.' />
                              <span>Invalid First name.</span>
                         </div>
-                        <div className="field l-name">
+                        <div className="field l-name name">
                             <label htmlFor="last_name">Last name</label>
                             <input value={lName} required onChange={(e) => setLName(e.target.value)} id='last_name' type="text" placeholder='Enter your Last name.'/>
                             <span>Invalid Last name.</span>
@@ -47,7 +47,7 @@ const Contact = () => {
                         <span>Text field cannot be empty.</span>
                     </div>
                     <div className="field radio">
-                        <input required type="radio" />
+                        <input required type="checkbox" />
                         <label htmlFor="checkbox">You agree to providing your data to {name} who may contact you.</label>
                     </div>
                     <button onSubmit={handleSubmit} className='form-btn' id='btn__submit'>Send Message</button>
