@@ -23,7 +23,7 @@ const Contact = () => {
                     <h1>Contact Me</h1>
                     <p>Hi there, contact me to ask me about anything you have in mind.</p>
                 </div>
-                <form action=''>
+                <form action='submit'  onSubmit={handleSubmit}>
                     <div className="name">
                         <div className="field name">
                             <label htmlFor="first_name">First name</label>
@@ -47,10 +47,10 @@ const Contact = () => {
                         <span>Text field cannot be empty.</span>
                     </div>
                     <div className="field radio">
-                        <input required type="checkbox" />
+                        <input className='checkbox' required type="checkbox" />
                         <label htmlFor="checkbox">You agree to providing your data to {name} who may contact you.</label>
                     </div>
-                    <button onSubmit={handleSubmit} className='form-btn' id='btn__submit'>Send Message</button>
+                    <button className='form-btn' id='btn__submit'>Send Message</button>
                 </form>
                 <Footer />
             </div>

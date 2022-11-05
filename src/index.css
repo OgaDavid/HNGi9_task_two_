@@ -195,6 +195,7 @@ input {
 .radio {
   align-items: center;
   margin-bottom: 32px;
+  display: flex;
 }
 
 .radio input {
@@ -212,6 +213,10 @@ input {
 
 button:hover {
   cursor: pointer;
+}
+
+.checkbox {
+  width: 30px;
 }
 
 textarea {
@@ -290,6 +295,10 @@ textarea::placeholder {
       gap: 2rem;
   }
 
+  .radio label {
+    width: 400px;
+  }
+
   textarea {
     width: 300px;
   }
@@ -315,7 +324,7 @@ textarea::placeholder {
     width: 300px;
   }
 
-  .field input {
+  #email {
     width: 300px;
   }
 
